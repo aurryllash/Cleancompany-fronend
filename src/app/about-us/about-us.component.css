@@ -1,0 +1,246 @@
+main {
+    width: 100%;
+    height: 355px;
+    background-image: url(https://rockstheme.com/rocks/preview-cleanhome/img/background/f1.jpg);
+}
+main .title {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(77, 92, 112, 0.616);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+
+}
+main .title h1 {
+    font-size: 2.5rem;
+}
+main .title p {
+    display: flex;
+    gap: 15px;
+}
+
+.our-goal {
+    width: 100%;
+    padding: 100px 0 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.our-goal .cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 120px;
+}
+.our-goal .cont .text {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 450px;
+    gap: 30px;
+}
+.our-goal .cont .text .gol {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.our-goal .cont .text .line {
+    width: 40px;
+    height: 2px;
+    background-color: #63C672;
+}
+.our-goal .cont .text h1 {
+    font-size: 2.3rem;
+    color: #63C672;
+}
+.our-goal .cont .text p {
+    word-spacing: 3px;
+    letter-spacing: 0.2px;
+    color: rgb(70, 70, 70);
+}
+.our-goal .cont .img {
+    width: 50%;
+    height: 600px;
+    overflow: hidden;
+}
+.our-goal .cont .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feature-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 100px;
+  background-color: #f1f1f1;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.feature-box {
+  background-color: white;
+  width: 300px;
+  padding: 100px 30px 100px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: all 0.3s ease;
+  border-bottom: 4px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+.feature-box i {
+    font-size: 4rem;
+    color: #63C672;
+}
+.feature-box h3 {
+    font-size: 1.6rem;
+    color: #555;
+}
+
+.feature-box:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-bottom: 4px solid #63C672; 
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  filter: brightness(0) saturate(100%) sepia(100%) hue-rotate(-20deg) saturate(500%);
+}
+
+.feature-box h3 {
+  font-weight: 700;
+  color: #0a0a23;
+  margin-bottom: 10px;
+}
+
+.feature-box p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+/* ---------------- Desktop (1200px და მეტი) ---------------- */
+@media screen and (min-width: 1200px) {
+  .our-goal .cont {
+    flex-direction: row;
+    gap: 120px;
+  }
+  .our-goal .cont .text {
+    width: 450px;
+  }
+  .our-goal .cont .img {
+    width: 50%;
+    height: 600px;
+  }
+  .feature-section {
+    padding: 100px;
+  }
+}
+
+/* ---------------- Laptop და Small Desktop (992px - 1199px) ---------------- */
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .our-goal .cont {
+    gap: 80px;
+  }
+  .our-goal .cont .text {
+    width: 400px;
+  }
+  .our-goal .cont .img {
+    height: 500px;
+  }
+  .feature-box {
+    width: 280px;
+    padding: 80px 25px;
+  }
+}
+
+/* ---------------- Tablet (768px - 991px) ---------------- */
+@media screen and (max-width: 991px) {
+  .our-goal .cont {
+    flex-direction: column;
+    gap: 60px;
+  }
+  .our-goal .cont .text,
+  .our-goal .cont .img {
+    width: 90%;
+  }
+  .our-goal .cont .img {
+    height: 400px;
+  }
+  .feature-section {
+    padding: 60px 20px;
+  }
+  .feature-box {
+    width: 100%;
+    max-width: 500px;
+    padding: 60px 20px;
+  }
+}
+
+/* ---------------- Mobile (576px - 767px) ---------------- */
+@media screen and (max-width: 767px) {
+  main .title h1 {
+    font-size: 2rem;
+  }
+  main .title p {
+    display: none;
+  }
+  .our-goal {
+    padding: 60px 0;
+  }
+  .our-goal .cont .text h1 {
+    font-size: 1.8rem;
+  }
+  .our-goal .cont .text {
+    gap: 20px;
+  }
+  .feature-box i {
+    font-size: 3rem;
+  }
+  .feature-box h3 {
+    font-size: 1.4rem;
+  }
+  .feature-box p {
+    font-size: 14px;
+  }
+}
+
+/* ---------------- Extra Small Mobile (max 575px) ---------------- */
+@media screen and (max-width: 575px) {
+  .our-goal .cont .text h1 {
+    font-size: 1.5rem;
+  }
+  .our-goal .cont .text p {
+    font-size: 0.95rem;
+  }
+  .feature-box {
+    padding: 50px 15px;
+  }
+  .feature-box h3 {
+    font-size: 1.2rem;
+  }
+  .feature-box p {
+    font-size: 13px;
+  }
+  main .title h1 {
+    font-size: 1.6rem;
+  }
+  main .title p {
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: 5px;
+  }
+}

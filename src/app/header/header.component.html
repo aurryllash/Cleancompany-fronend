@@ -1,0 +1,51 @@
+<header>
+  <div class="content">
+    <div class="logo">
+      <img routerLink="/" src="assets/images/headerlogo.png" alt="Logo" />
+
+      <div class="toggle-menu" (click)="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+
+    <menu [class.open]="menuOpen">
+      <ul>
+        <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          {{ 'HOME' | translate }}
+        </li>
+        <li routerLink="/about-us" routerLinkActive="active">
+          {{ 'ABOUT' | translate }}
+        </li>
+
+        <li class="dropdown"
+          (mouseenter)="showDropdown()"
+          (mouseleave)="hideDropdown()">
+
+          <span (click)="toggleDropdown()" style="color: #5C5D5D;">
+            {{ 'SERVICES' | translate }}
+            <i class="fa-solid fa-chevron-down"></i>
+          </span>
+
+          <ul class="dropdown-menu" *ngIf="dropdownVisible">
+            <li routerLink="/services/private">{{ 'PRIVATE' | translate }}</li>
+            <li routerLink="/services/companies">{{ 'COMPANYS' | translate }}</li>
+            <li routerLink="/services/marketing">{{ 'SCHOOLS' | translate }}</li>
+          </ul>
+
+        </li>
+        <li routerLink="/contact" routerLinkActive="active">
+          {{ 'CONTACT' | translate }}
+        </li>
+
+        <li class="lang-switch">
+          <button (click)="switchLanguage('en')" class="eng">
+            <img src="assets/images/eng.png" alt="ENG Switcher">
+          </button>
+          <button (click)="switchLanguage('sv')" class="sv">
+            <img src="assets/images/swe.png" alt="SWED Switcher">
+          </button>
+        </li>
+      </ul>
+    </menu>
+  </div>
+</header>

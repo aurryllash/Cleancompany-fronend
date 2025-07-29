@@ -1,0 +1,183 @@
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 65%;
+}
+
+header .logo img {
+  cursor: pointer;
+}
+
+/* Main Menu */
+menu ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+menu ul li {
+  color: #5C5D5D;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+menu ul li:hover {
+  color: #63C672;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ცენტრში გასწორება */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  list-style: none;
+  margin: 0;
+  min-width: 150px;
+  gap: 10px !important;
+  padding: 10px 0 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: none; /* საწყისად დამალული */
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex; /* მაუსზე გამოჩენა */
+  flex-direction: column;
+}
+
+/* Dropdown Items */
+.dropdown-menu li {
+  padding: 4px 10px;
+  font-size: 13px;
+  line-height: 1.2;
+  margin: 0;
+  border: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+/* Language Switcher */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-switch button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.lang-switch img {
+  width: 25px;
+  height: 25px;
+  transition: 0.3s;
+}
+
+.lang-switch button:hover img {
+  transform: scale(1.1);
+}
+
+/* Active link */
+.active {
+  color: #63C672 !important;
+}
+
+/* Toggle (Mobile) */
+.toggle-menu {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .content {
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+
+  .toggle-menu {
+    display: block;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+  }
+  span {
+    margin-right: 80%;
+  }
+  menu {
+    width: 100%;
+    display: none;
+  }
+
+  menu.open {
+    display: block;
+  }
+
+  menu ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    padding: 10px 0;
+  }
+
+  menu ul li {
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background: transparent;
+    transform: none;
+    left: auto;
+    top: auto;
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: flex;
+  }
+}

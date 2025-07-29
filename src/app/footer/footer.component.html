@@ -1,0 +1,35 @@
+<footer>
+    <div class="cont">
+        <div class="info">
+            <div class="logo">
+                <img src="assets/images/headerlogowhite.png" alt="">
+            </div>
+            <div class="text">
+                <p>{{ 'FOOTER_TEXT' | translate }}</p>
+                <ul>
+                    <li><span>Tel:</span> 0108085787</li>
+                    <li><span>{{ 'EMAIL1' | translate }}:</span> Vardagshjalte&#64;stkhlm.se</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <div class="list">
+                <b>{{ 'MENU' | translate }}</b>
+                <ul>
+                    <li><a routerLink="/">{{ 'HOME' | translate }}</a></li>
+                    <li><a routerLink="/about-us">{{ 'ABOUT' | translate }}</a></li>
+                    <li><a routerLink="/services/companies">{{ 'SERVICES' | translate }}</a></li>
+                    <li><a routerLink="/contact">{{ 'CONTACT' | translate }}</a></li>
+                </ul>
+            </div>
+            <div class="list">
+                <b>{{ 'SERVICES_LINK' | translate }}</b>
+                <ul>
+                    <li routerLink="/services/private"><i class="fa-solid fa-chevron-right"></i><a>{{ 'PRIVATE' | translate }}</a> </li>
+                    <li routerLink="/services/companies"><i class="fa-solid fa-chevron-right"></i><a >{{ 'COMPANYS' | translate }}</a></li>
+                    <li routerLink="/services/school"><i class="fa-solid fa-chevron-right"></i><a >{{ 'SCHOOLS' | translate }}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

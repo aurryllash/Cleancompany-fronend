@@ -1,0 +1,193 @@
+<section class="intro">
+    <div class="area">
+        <div class="text">
+            <h1>{{ 'INTRO_TITLE' | translate }} <span> {{ 'SUCCESS' | translate }} </span>{{ 'SECOND_SUCC' | translate }}</h1>
+            <p>{{ 'INTRO_TEXT' | translate }}</p>
+            <div class="intro-buttons">
+                <a class="green-button" routerLink="services/companies">{{ 'OUR_SERVICES' | translate }}</a>
+                <a class="white-button" routerLink="services/companies">{{ 'BOOK_NOW' | translate }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="welcome">
+    <div class="container">
+        <div class="card">
+            <i class="fa-solid fa-house" style="width: 35px !important;"></i>
+            <b>{{ 'PRIVATE_TITLE' | translate }}</b>
+            <p>{{ 'PRIVATE_DESC' | translate }}</p>
+            <ul>
+                <li>{{ 'LIST_ONE' | translate }}</li>
+                <li>{{ 'LIST_TWO' | translate }}</li>
+                <li>{{ 'LIST_THREE' | translate }}</li>
+                <li>{{ 'LIST_FOUR' | translate }}</li>
+            </ul>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-building-user" style="width: 35px !important;"></i>
+            <b>{{ 'APARTMENT_TITLE' | translate }}</b>
+            <p>{{ 'APARTMENT_DESC' | translate }}</p>
+            <ul>
+                <li>{{ 'LIST_ONE' | translate }}</li>
+                <li>{{ 'LIST_TWO' | translate }}</li>
+                <li>{{ 'LIST_THREE' | translate }}</li>
+                <li>{{ 'LIST_FOUR' | translate }}</li>
+            </ul>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-building-columns" style="width: 35px !important;"></i>
+            <b>{{ 'OFFICE_TITLE' | translate }}</b>
+            <p>{{ 'OFFICE_DESC' | translate }}</p>
+            <ul>
+                <li>{{ 'LIST_ONE' | translate }}</li>
+                <li>{{ 'LIST_TWO' | translate }}</li>
+                <li>{{ 'LIST_THREE' | translate }}</li>
+                <li>{{ 'LIST_FOUR' | translate }}</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="box-of-about">
+        <img src="https://rockstheme.com/rocks/preview-cleanhome/img/about/ab.jpg" alt="">
+        <div class="text">
+            <h1><span>{{ 'INTRO_TITLE' | translate }}</span> {{ 'ABOUT_HEADING' | translate }}</h1>
+            <p>{{ 'INTRO_TEXT' | translate }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="services">
+    <div class="head-text">
+        <h1>{{ 'SERVICES_SECTION_TITLE' | translate }}</h1>
+        <p>{{ 'SERVICES_SECTION_DESC' | translate }}</p>
+        <div class="line"></div>
+    </div>
+    <div class="container">
+        <div class="card" routerLink="/services/private">
+            <div class="card-image">
+                <img src="https://img.freepik.com/free-photo/house-isolated-field_1303-23773.jpg?semt=ais_hybrid&w=740" alt="">
+            </div>
+            <div class="card-text">
+                <b>{{ 'PRIVATE_SERVICES' | translate }}</b>
+                <p>{{ 'PRIVATE_SERVICES_DESC' | translate }}</p>
+                <a>{{ 'READ_MORE' | translate }}</a>
+            </div>
+        </div>
+        <div class="card" routerLink="/services/companies">
+            <div class="card-image">
+                <img src="https://img.freepik.com/free-photo/modern-office-space-interior_158595-5206.jpg" alt="">
+            </div>
+            <div class="card-text">
+                <b>{{ 'COMPANIES_SERVICES' | translate }}</b>
+                <p>{{ 'COMPANIES_SERVICES_DESC' | translate }}</p>
+                <a>{{ 'READ_MORE' | translate }}</a>
+            </div>
+        </div>
+        <div class="card" routerLink="/services/marketing">
+            <div class="card-image">
+                <img src="https://freerangestock.com/sample/360/school-classroom.jpg" alt="">
+            </div>
+            <div class="card-text">
+                <b>{{ 'SCHOOL_SERVICES' | translate }}</b>
+                <p>{{ 'SCHOOL_SERVICES_DESC' | translate }}</p>
+                <a>{{ 'READ_MORE' | translate }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="request-call">
+    <div class="content">
+        <div class="head">
+            <div class="text-one">
+                <h1>{{ 'REQUEST_TITLE' | translate }}</h1>
+                <div class="line"></div>
+                <p>{{ 'REQUEST_DESC' | translate }}</p>
+            </div>
+            <div class="text-two">
+                <ul>
+                    <li>
+                        <div class="t-adress">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div class="list">
+                                <b>Lindholmsbacken 27, 127 49 Skärholmen</b>
+                                <p>Skärholmen, Swedan</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="t-adress">
+                            <i class="fa-solid fa-phone"></i>
+                            <div class="list">
+                                <b>0108085787 </b>
+                                <p>Vardagshjalte&#64;stkhlm.se</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="form-request">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+                <div class="left-form">
+                <div>
+                    <input formControlName="name" placeholder="{{ 'FORM_NAME' | translate }}"/>
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                        <small *ngIf="name.errors?.['required']">Name is required.</small>
+                        <small *ngIf="name.errors?.['minlength']">Name must be at least 2 characters.</small>
+                    </div>
+                </div>
+
+                <div>
+                    <input formControlName="email" placeholder="{{ 'FORM_EMAIL' | translate }}"/>
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                        <small *ngIf="email.errors?.['required']">Email is required.</small>
+                        <small *ngIf="email.errors?.['email']">The email format is invalid.</small>
+                    </div>
+                </div>
+
+                <div>
+                    <input formControlName="phone" placeholder="{{ 'FORM_PHONE' | translate }}"/>
+                    <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                        <small *ngIf="phone.errors?.['required']">Number is required.</small>
+                        <small *ngIf="phone.errors?.['pattern']">Number is incorrect.</small>
+                    </div>
+                </div>
+
+                <div> 
+                    <select formControlName="service">
+                        <option value="">{{ 'FORM_SERVICE' | translate }}</option>
+                        <option value="move-out">{{ 'MOVE_OUT' | translate }}</option>
+                        <option value="window-Cleaning">{{ 'WINDOW_CLEANING' | translate }}</option>
+                        <option value="deep-cleaning">{{ 'DEEP_CLEANING' | translate }}</option>
+                        <option value="disinfection-service">{{ 'DISINFECTION' | translate }}</option>
+                        <option value="home-viewing">{{ 'HOME_VIEWING' | translate }}</option>
+                        <option value="construction-cleaning">{{ 'CONSTRUCTION' | translate }} </option>
+                        <option value="office-cleaning">{{ 'OFFICE' | translate }}</option>
+                    </select>
+                    <div *ngIf="service.invalid && (service.dirty || service.touched)">
+                        <small *ngIf="service.errors?.['required']">Service type is required.</small>
+                    </div>
+                </div>
+                </div>
+
+                <div class="massage">
+                    <textarea formControlName="message" placeholder="{{ 'FORM_MESSAGE' | translate }}"></textarea>
+                <div *ngIf="message.invalid && (message.dirty || message.touched)">
+                    <small *ngIf="message.errors?.['required']">Message is required.</small>
+                    <small *ngIf="message.errors?.['minlength']">Message must be at least 10 characters.</small>
+                </div>
+
+                <button type="submit">{{ 'FORM_SUBMIT' | translate }}</button>
+
+                <div *ngIf="successMessage" class="success-message">
+                    {{ successMessage }}
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

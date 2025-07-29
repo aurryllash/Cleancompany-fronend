@@ -1,0 +1,110 @@
+<main>
+    <div class="title">
+        <h1>{{ 'COMPANIES_TITLE1' | translate }}</h1>
+        <p>{{ 'BREADCRUMB4' | translate }}</p> 
+    </div>
+</main>
+<section class="services">
+    <div class="cont">
+        <div class="card" routerLink="/services/companies/move-out-cleaning">
+            <div class="img">
+                <img src="assets/images/photo1.jpg" alt="Service photo">
+            </div>
+            <b>{{ 'MOVE_OUT1' | translate }}</b>
+        </div>
+        <div class="card" routerLink="/services/companies/disinfection">
+            <div class="img">
+                <img src="assets/images/photo3.jpg" alt="Service photo">
+            </div>
+            <b>{{ 'DISINFECTION1' | translate }}</b>
+        </div>
+        <div class="card" routerLink="/services/companies/prices">
+            <div class="img">
+                <img src="https://img.freepik.com/premium-photo/construction-worker-using-floor-polisher_632498-4713.jpg?semt=ais_hybrid&w=740&q=80" alt="Service photo">
+            </div>
+            <b>{{ 'CONSTRUCTION1' | translate }}</b>
+        </div>
+        <div class="card" routerLink="/services/companies/prices">
+            <div class="img">
+                <img src="assets/images/photo5.avif" alt="Service photo">
+            </div>
+            <b>{{ 'OFFICE1' | translate }}</b>
+        </div>
+        <div class="card" routerLink="/services/companies/prices">
+            <div class="img">
+                <img src="assets/images/photo4.jpeg" alt="Service photo">
+            </div>
+            <b>{{ 'WINDOW_CLEANING1' | translate }}</b>
+        </div>
+        
+    </div>
+</section>
+
+<section class="request-call">
+    <div class="content">
+        <div class="head">
+            <div class="text-one">
+                <p>{{ 'REQUEST_CALL_TEXT1' | translate }}</p>
+            </div>
+            <div class="text-two">
+               <h1>{{ 'CONTACT_FORM_TITLE' | translate }}</h1>
+               <b>{{ 'CONTACT_FORM_SUBTITLE' | translate }}</b>
+            </div>
+        </div>
+        <div class="form-request">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+                <div class="left-form">
+                    <input formControlName="name" placeholder="{{ 'NAME' | translate }}" />
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                        <small *ngIf="name.errors?.['required']">Name is required.</small>
+                        <small *ngIf="name.errors?.['minlength']">Minimum 2 characters required.</small>
+                    </div>
+
+                    <input formControlName="email" placeholder="{{ 'EMAIL1' | translate }}" />
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                        <small *ngIf="email.errors?.['required']">Email is required.</small>
+                        <small *ngIf="email.errors?.['email']">The email format is invalid.</small>
+                    </div>
+
+                    <input formControlName="phone" placeholder="{{ 'FORM_PHONE' | translate }}" />
+                    <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                        <small *ngIf="phone.errors?.['required']">Phone number is required.</small>
+                        <small *ngIf="phone.errors?.['pattern']">Phone number is incorrect.</small>
+                    </div>
+
+                    <select formControlName="service">
+                        <option value="">{{ 'SERVICE' | translate }}</option>
+                        <option value="Move-Out">{{ 'MOVE_OUT' | translate }}</option>
+                        <option value="window-Cleaning">{{ 'WINDOW_CLEANING' | translate }}</option>
+                        <option value="deep-cleaning">{{ 'DEEP_CLEANING' | translate }}</option>
+                        <option value="disinfection-service">{{ 'DISINFECTION' | translate }}</option>
+                        <option value="home-viewing">{{ 'HOME_VIEWING' | translate }}</option>
+                        <option value="construction-cleaning">{{ 'CONSTRUCTION' | translate }}</option>
+                        <option value="office-cleaning">{{ 'OFFICE' | translate }}</option>
+                    </select>
+                    <div *ngIf="service.invalid && (service.dirty || service.touched)">
+                        <small *ngIf="service.errors?.['required']">Service type is required.</small>
+                    </div>
+                </div>
+
+                <div class="massage">
+                    <textarea formControlName="message" placeholder="{{ 'MESSAGE' | translate }}"></textarea>
+                    <div *ngIf="message.invalid && (message.dirty || message.touched)">
+                        <small *ngIf="message.errors?.['required']">Message is required.</small>
+                        <small *ngIf="message.errors?.['minlength']">Minimum 10 characters required.</small>
+                    </div>
+
+                    <button type="submit">{{ 'SUBMIT' | translate }}</button>
+
+                    <div *ngIf="successMessage" class="success-message">
+                    {{ successMessage }}
+                    </div>
+
+                    <div *ngIf="errorMessage" class="error-message">
+                    {{ errorMessage }}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

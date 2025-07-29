@@ -1,0 +1,444 @@
+
+.intro {
+    width: 100%;
+    height: 90vh;
+    background-image: url(https://rockstheme.com/rocks/preview-cleanhome/img/slider/s1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.intro .area {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 22, 43, 0.705);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.intro .area .text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+.intro .area .text {
+    color: white;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+.intro .area .text h1 {
+    font-size: 3rem;
+    width: 700px;
+    text-align: center;
+}
+.intro .area .text p {
+    font-size: 1rem;
+    width: 50%;
+    text-align: center;
+}
+.intro .area .text .intro-buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.welcome {
+    width: 100%;
+    padding: 100px 0 100px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+}
+.welcome .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.welcome .container .card {
+    width: 260px;
+    height: 330px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.17);
+    -webkit-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.17);
+    -moz-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.17);
+    font-family: "Lato", sans-serif;
+}
+.welcome .container .card i{
+    font-size: 2.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #63C672;
+    padding: 20px;
+    color:#63C672;
+    transition: 0.5s;
+}
+.welcome .container .card b {
+    font-size: 1.1rem;
+    color: #555555;
+    font-weight: 710;
+    transition: 0.5s;
+}
+.welcome .container .card p {
+    font-size: 0.9rem;
+    color: #2b2b2b;
+}
+.welcome .container .card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.welcome .container .card li {
+    color: #6d6d6d;
+}
+.welcome .container .card:hover > i {
+    background-color: #63C672;
+    color: white;
+}
+.welcome .container .card:hover > b {
+    color: #63C672;
+}
+
+.about {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FAFAFA;
+    padding: 100px 0 100px 0;
+}
+.about .box-of-about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.about .box-of-about img {
+    width: 700px;
+}
+.about .box-of-about .text {
+    display: flex;
+    flex-direction: column;
+    font-family: "Noto Sans", sans-serif;
+    width: 30%;
+    gap: 20px;
+}
+.about .box-of-about .text h1 {
+    color: #555555;
+}
+.about .box-of-about .text p {
+    color: #6d6d6d;
+    font-size: 0.85rem;
+}
+
+.services {
+    width: 100%;
+    padding: 140px 0px 140px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Noto Sans", sans-serif;
+    gap: 50px;
+}
+.services .head-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.services .head-text h1 {
+    font-size: 2.2rem;
+    color: #555555;
+}
+.services .head-text p {
+    width: 600px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.services .head-text .line {
+    width: 80px;
+    height: 2px;
+    border-radius: 30px;
+    background-color: #63C672;
+}
+.services .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 70%;
+}
+.services .container .card {
+    width: 340px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.services .container .card:hover > .card-image img{
+    transform: scale(1.1);
+}
+.services .container .card .card-image {
+    width: 390px;
+    height: 238px;
+    overflow: hidden;
+    background-color: #555555;
+    transition: 0.5s;
+}
+.services .container .card .card-image img {
+    width: 100%;
+    height: 238px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.services .container .card .card-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.services .container .card .card-text b {
+    font-size: 1.4rem;
+    color: #555555;
+}
+.services .container .card .card-text p {
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0px 20px 0px 20px;
+    color: #6d6d6d;
+}
+.services .container .card .card-text a {
+    cursor: pointer;
+    font-weight: 600;
+    color: #6d6d6d;
+    transition: 0.5s;
+}
+.services .container .card .card-text a:hover {
+    color: #63C672;
+}
+
+.request-call {
+    width: 100%;
+    background-image: url(https://rockstheme.com/rocks/preview-cleanhome/img/slider/s1.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+}
+.content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Noto Sans", sans-serif;
+    background-color: #2b2b2b6e;
+    padding: 100px 0px 100px 0px;
+    gap: 70px;
+}
+.request-call .head {
+    display: flex;
+    gap: 50px;
+    width: 60%;
+}
+.request-call .head .text-one {
+    width: 540px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.request-call .head .text-one .line {
+    width: 100px;
+    height: 3px;
+    background-color: #63C672;
+}
+.request-call .head .text-one h1 {
+    color: white;
+    font-size: 2.2rem;
+}
+.request-call .head .text-one p {
+    color: white;
+}
+.request-call .head .text-two ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.request-call .head .text-two ul li .t-adress{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+.request-call .head .text-two ul li .t-adress i {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #63C672;
+}
+.request-call form .left-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.request-call form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.request-call form input{
+    width: 540px;
+    height: 45px;
+    padding-left: 20px;
+    border: none;
+}
+.request-call form select{
+    width: 560px;
+    height: 45px;
+    padding-left: 20px;
+    border: none;
+}
+.request-call form .massage {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.request-call form .massage textarea {
+    width: 540px;
+    height: 165px;
+    padding: 10px 0px 0px 20px;
+    border: none;
+}
+
+.request-call form .massage button {
+    width: 560px;
+    height: 45px;
+    background-color: #63C672;
+    color: white;
+    font-weight: 800;
+    font-family: "Noto Sans", sans-serif;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.request-call form .massage button:hover {
+    background-color: white;
+    color: #63C672;
+    border: 1px solid #63C672;
+}
+.request-call small {
+    color: red;
+}
+.success-message {
+  margin-top: 1rem;
+  color: #63C672;
+  font-weight: bold;
+  animation: fadeIn 0.3s ease-in;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media screen and (max-width: 1150px) {
+    .head {
+        flex-direction: column;
+        align-items: center;
+    }
+    .head .text-one {
+        align-items: center;
+        text-align: center;
+    }
+    form {
+        flex-direction: column !important;
+    }
+    .box-of-about {
+        justify-content: space-around;
+    }
+    .box-of-about img{
+        width: 50% !important;
+    }
+    
+}
+@media screen and (max-width: 995px) {
+    .box-of-about {
+        flex-direction: column;
+    }
+    .box-of-about img {
+        width: 80% !important;
+    }
+    .box-of-about .text {
+        width: 80% !important;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 701px) {
+   .intro .area .text h1 {
+        width: 70%;
+        font-size: 2rem;
+    } 
+    .intro .area .text p{
+        font-size: 1.1rem;
+        width: 70%;
+        text-align: center;
+
+    }
+    .head-text p{
+        width: 80% !important;
+    }
+    .head-text h1 {
+        font-size: 1.6rem !important;
+    }
+    .left-form {
+        width: 80% !important;
+        align-items: center;
+    }
+
+}
+@media screen and (max-width: 615px) {
+    .left-form input, select{
+        width: 300px !important;
+         box-sizing: border-box;
+    }
+    .massage textarea, button{
+        width: 300px !important;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .text-one h1{
+        font-size: 1.7rem !important;
+    }
+    .text-one p {
+        width: 100%;
+    }
+    .intro-buttons {
+        flex-direction: column;
+    }
+    .text-one {
+        width: 100% !important;
+    }
+    .text-two {
+        display: none;
+    }
+}

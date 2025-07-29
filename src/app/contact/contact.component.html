@@ -1,0 +1,94 @@
+<main>
+    <div class="title">
+        <h1> {{ 'CONTACT_US' | translate }}</h1>
+        <p>{{ 'BREADCRUMB1' | translate }}</p> 
+    </div>
+</main>
+
+
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="contact-container">
+  <div class="contact-info">
+    <h2>{{ 'REQUEST_CONTACT' | translate }} <span>{{ 'REQUEST_CONTACT2' | translate }}</span></h2>
+    <p>
+     {{ 'CONTACT_DESC' | translate }}
+    </p>
+    <p class="social-links">
+      <strong>{{ 'SOCIAL_LINKS' | translate }}</strong>
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-google"></i>
+      <i class="fab fa-pinterest-p"></i>
+      <i class="fab fa-instagram"></i>
+    </p>
+  </div>
+
+  <div class="contact-form">
+    <div class="row">
+      <div class="form-group">
+        <input
+          type="text"
+          name="name"
+          placeholder="{{ 'NAME' | translate }}"
+          [(ngModel)]="formData.name"
+          #name="ngModel"
+          required
+          minlength="2"
+        />
+        <div class="error" *ngIf="name.invalid && name.touched">
+          <small *ngIf="name.errors?.['required']" style="color: red;">Name is required.</small>
+          <small *ngIf="name.errors?.['minlength']" style="color: red;">Name must be at least 2 characters.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="email"
+          name="email"
+          placeholder="{{ 'EMAIL1' | translate }}"
+          [(ngModel)]="formData.email"
+          #email="ngModel"
+          required
+          email
+        />
+        <div class="error" *ngIf="email.invalid && email.touched">
+          <small *ngIf="email.errors?.['required']" style="color: red;">Email is required.</small>
+          <small *ngIf="email.errors?.['email']" style="color: red;">Enter a valid email.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        name="subject"
+        placeholder="{{ 'SUBJECT' | translate }}"
+        [(ngModel)]="formData.subject"
+        #subject="ngModel"
+        required
+      />
+      <div class="error" *ngIf="subject.invalid && subject.touched">
+        <small *ngIf="subject.errors?.['required']" style="color: red;">Subject is required.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <textarea
+        name="message"
+        placeholder="{{ 'MESSAGE' | translate }}"
+        [(ngModel)]="formData.message"
+        #message="ngModel"
+        required
+        minlength="10"
+      ></textarea>
+      <div class="error" *ngIf="message.invalid && message.touched">
+        <small *ngIf="message.errors?.['required']" style="color: red;">Message is required.</small>
+        <small *ngIf="message.errors?.['minlength']" style="color: red;">Message must be at least 10 characters.</small>
+      </div>
+    </div>
+    <div class="row">
+      <button type="submit" [disabled]="contactForm.invalid">{{ 'SUBMIT' | translate }}</button>
+    </div>
+  </div>
+</form>
+
+ 
