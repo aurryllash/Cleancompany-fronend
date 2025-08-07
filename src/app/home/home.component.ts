@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -42,7 +43,7 @@ onSubmit() {
   if (this.contactForm.valid) {
     const formData = this.contactForm.value;
 
-    fetch('http://localhost:3000/send-email', {
+    fetch(environment.apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -51,21 +52,21 @@ onSubmit() {
     })
     .then(response => {
       if (!response.ok) {
-        throw new Error('Email გაგზავნა ვერ მოხერხდა.');
+        throw new Error('Email failed to send. Please try again.');
       }
       return response.json();
     })
     .then(data => {
       console.log('სერვერზე პასუხი:', data);
-      this.successMessage = 'დამატებულია წარმატებით!';
+      this.successMessage = 'Successfully added!';
       this.contactForm.reset();
       setTimeout(() => {
         this.successMessage = '';
       }, 5000);
     })
     .catch(error => {
-      console.error('Email გაგზავნის შეცდომა:', error);
-      this.successMessage = 'ვერ მოხერხდა გაგზავნა.';
+      console.error('Email sending error:', error);
+      this.successMessage = 'Failed to send.';
     });
   } else {
     this.contactForm.markAllAsTouched();

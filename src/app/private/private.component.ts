@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-private',
@@ -40,9 +41,9 @@ export class PrivateComponent {
 
 onSubmit() {
   if (this.contactForm.valid) {
-    this.http.post('http://localhost:3000/send-email', this.contactForm.value).subscribe({
+    this.http.post(environment.apiUrl, this.contactForm.value).subscribe({
       next: () => {
-        this.successMessage = 'ფორმა წარმატებით გაიგზავნა!';
+        this.successMessage = 'Form was submitted successfully!';
         this.errorMessage = '';
         this.contactForm.reset();
 
@@ -51,7 +52,7 @@ onSubmit() {
         }, 5000);
       },
       error: () => {
-        this.errorMessage = 'გაგზავნა ვერ მოხერხდა. გთხოვ სცადე თავიდან.';
+        this.errorMessage = 'Failed to send. Please try again.';
         this.successMessage = '';
 
         setTimeout(() => {
@@ -61,7 +62,7 @@ onSubmit() {
     });
   } else {
     this.successMessage = '';
-    this.errorMessage = 'შეავსე ყველა საჭირო ველი.';
+    this.errorMessage = 'Please fill in all required fields.';
     this.contactForm.markAllAsTouched();
 
     setTimeout(() => {

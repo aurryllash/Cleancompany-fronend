@@ -16,6 +16,18 @@ main .title {
     font-family: 'Montserrat', sans-serif;
 
 }
+.success-message {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 main .title h1 {
     font-size: 2.5rem;
 }

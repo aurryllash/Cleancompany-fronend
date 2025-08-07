@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
+
 export class ContactComponent {
   formData = {
     name: '',
@@ -14,20 +15,26 @@ export class ContactComponent {
     message: ''
   };
 
+  successMessage: string = ''; // <- Add this
+
   onSubmit(form: any) {
     if (form.valid) {
-      fetch('http://localhost:3000/send-email', {
+      fetch(environment.apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(this.formData),
       })
       .then(res => res.json())
       .then(() => {
-        alert('გაგზავნილია წარმატებით!');
+        this.successMessage = 'Successfully sent!';
         form.resetForm();
+
+        setTimeout(() => {
+          this.successMessage = '';
+        }, 5000);
       })
       .catch(() => {
-        alert('შეცდომა გაგზავნისას.');
+        this.successMessage = 'Failed to send.';
       });
     }
   }

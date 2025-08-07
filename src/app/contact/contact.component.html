@@ -5,7 +5,6 @@
     </div>
 </main>
 
-
 <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="contact-container">
   <div class="contact-info">
     <h2>{{ 'REQUEST_CONTACT' | translate }} <span>{{ 'REQUEST_CONTACT2' | translate }}</span></h2>
@@ -88,6 +87,10 @@
     <div class="row">
       <button type="submit" [disabled]="contactForm.invalid">{{ 'SUBMIT' | translate }}</button>
     </div>
+    <div *ngIf="successMessage" class="success-message">
+  {{ successMessage }}
+</div>
+
   </div>
 </form>
 
