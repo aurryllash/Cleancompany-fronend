@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://vardagshjalte.vercel.app/send-email'
+  apiUrl: 'https://cleancompany-backend.onrender.com/send-email'
 };
