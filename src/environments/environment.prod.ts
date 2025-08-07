@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://your-production-url.com/send-email'
+  apiUrl: 'https://vardagshjalte.vercel.app/send-email'
 };
