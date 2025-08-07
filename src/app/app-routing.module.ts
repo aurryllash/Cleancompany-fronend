@@ -18,7 +18,7 @@ import { CompaniesConstructionComponent } from './companies-construction/compani
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'about-us', component:AboutUsComponent},
-  {path:'services/private', component:ServicesComponent},
+  { path: 'services/private', component: PrivateComponent },
   {path:'contact', component:ContactComponent},
   {path:'services/move-out-cleaning', component:MoveOutComponent},
   {path:'services/window-cleaning', component:WindowCleaningComponent},

@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent {
 
   contactForm: FormGroup;
@@ -37,18 +38,38 @@ export class HomeComponent {
     return this.contactForm.get('message')!;
   }
 
-  onSubmit() {
-    if (this.contactForm.valid) {
-      console.log('ფორმის მონაცემები:', this.contactForm.value);
-      this.successMessage = 'Application sent successfully.';
+onSubmit() {
+  if (this.contactForm.valid) {
+    const formData = this.contactForm.value;
 
+    fetch('http://localhost:3000/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Email გაგზავნა ვერ მოხერხდა.');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('სერვერზე პასუხი:', data);
+      this.successMessage = 'დამატებულია წარმატებით!';
       this.contactForm.reset();
-
       setTimeout(() => {
         this.successMessage = '';
       }, 5000);
-    } else {
-      this.contactForm.markAllAsTouched();  // აქ ვამჩნევ ყველა ველს, რომ შეცდომა აჩვენოს
-    }
+    })
+    .catch(error => {
+      console.error('Email გაგზავნის შეცდომა:', error);
+      this.successMessage = 'ვერ მოხერხდა გაგზავნა.';
+    });
+  } else {
+    this.contactForm.markAllAsTouched();
   }
+}
+
 }

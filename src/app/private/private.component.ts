@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-private',
@@ -11,7 +12,7 @@ export class PrivateComponent {
   successMessage: string = '';
   errorMessage: string = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
@@ -37,26 +38,40 @@ export class PrivateComponent {
     return this.contactForm.get('message')!;
   }
 
-  onSubmit() {
-    if (this.contactForm.valid) {
-
-      console.log('ფორმის მონაცემები:', this.contactForm.value);
-      this.successMessage = 'Form was submitted successfully.';
-      this.errorMessage = '';
-      this.contactForm.reset();
-
-      setTimeout(() => {
-        this.successMessage = '';
-      }, 5000);
-    } else {
-
-      this.successMessage = '';
-      this.errorMessage = 'Form submission failed. Please check required fields.';
-      this.contactForm.markAllAsTouched();
-
-      setTimeout(() => {
+onSubmit() {
+  if (this.contactForm.valid) {
+    this.http.post('http://localhost:3000/send-email', this.contactForm.value).subscribe({
+      next: () => {
+        this.successMessage = 'ფორმა წარმატებით გაიგზავნა!';
         this.errorMessage = '';
-      }, 5000);
-    }
+        this.contactForm.reset();
+
+        setTimeout(() => {
+          this.successMessage = '';
+        }, 5000);
+      },
+      error: () => {
+        this.errorMessage = 'გაგზავნა ვერ მოხერხდა. გთხოვ სცადე თავიდან.';
+        this.successMessage = '';
+
+        setTimeout(() => {
+          this.errorMessage = '';
+        }, 5000);
+      }
+    });
+  } else {
+    this.successMessage = '';
+    this.errorMessage = 'შეავსე ყველა საჭირო ველი.';
+    this.contactForm.markAllAsTouched();
+
+    setTimeout(() => {
+      this.errorMessage = '';
+    }, 5000);
+  }
+}
+  resetForm() {
+    this.contactForm.reset();
+    this.successMessage = '';
+    this.errorMessage = '';
   }
 }
