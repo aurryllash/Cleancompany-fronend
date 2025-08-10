@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-services',
@@ -12,7 +13,7 @@ export class ServicesComponent {
   successMessage: string = '';
   errorMessage: string = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
@@ -40,24 +41,38 @@ export class ServicesComponent {
 
   onSubmit() {
     if (this.contactForm.valid) {
-
-      console.log('ფორმის მონაცემები:', this.contactForm.value);
-      this.successMessage = 'Form was submitted successfully.';
-      this.errorMessage = '';
-      this.contactForm.reset();
-
-      setTimeout(() => {
-        this.successMessage = '';
-      }, 5000);
+      this.http.post(environment.apiUrl, this.contactForm.value).subscribe({
+        next: () => {
+          this.successMessage = 'Form was submitted successfully!';
+          this.errorMessage = '';
+          this.contactForm.reset();
+  
+          setTimeout(() => {
+            this.successMessage = '';
+          }, 5000);
+        },
+        error: () => {
+          this.errorMessage = 'Failed to send. Please try again.';
+          this.successMessage = '';
+  
+          setTimeout(() => {
+            this.errorMessage = '';
+          }, 5000);
+        }
+      });
     } else {
-
       this.successMessage = '';
-      this.errorMessage = 'Form submission failed. Please check required fields.';
+      this.errorMessage = 'Please fill in all required fields.';
       this.contactForm.markAllAsTouched();
-
+  
       setTimeout(() => {
         this.errorMessage = '';
       }, 5000);
     }
   }
+    resetForm() {
+      this.contactForm.reset();
+      this.successMessage = '';
+      this.errorMessage = '';
+    }
 }
