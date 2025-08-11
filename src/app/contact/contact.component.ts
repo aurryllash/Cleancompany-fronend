@@ -47,24 +47,3 @@ export class ContactComponent {
 
 
 
-// onSubmit(form: any) {
-//   if (form.valid) {
-//     fetch(environment.apiUrl, {
-//       method: 'POST',
-//       headers: { 'Content-Type': 'application/json' },
-//       body: JSON.stringify(this.formData),
-//     })
-//     .then(res => res.json())
-//     .then(() => {
-//       this.successMessage = 'Successfully sent!';
-//       form.resetForm();
-
-//       setTimeout(() => {
-//         this.successMessage = '';
-//       }, 5000);
-//     })
-//     .catch(() => {
-//       this.successMessage = 'Failed to send.';
-//     });
-//   }
-// }
