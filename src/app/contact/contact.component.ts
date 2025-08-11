@@ -24,11 +24,15 @@ export class ContactComponent {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(this.formData),
       })
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json().catch(() => ({})); // თუ პასუხი არ არის JSON
+      })
       .then(() => {
         this.successMessage = 'Successfully sent!';
         form.resetForm();
-
         setTimeout(() => {
           this.successMessage = '';
         }, 5000);
@@ -38,4 +42,29 @@ export class ContactComponent {
       });
     }
   }
+  
 }
+
+
+
+// onSubmit(form: any) {
+//   if (form.valid) {
+//     fetch(environment.apiUrl, {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify(this.formData),
+//     })
+//     .then(res => res.json())
+//     .then(() => {
+//       this.successMessage = 'Successfully sent!';
+//       form.resetForm();
+
+//       setTimeout(() => {
+//         this.successMessage = '';
+//       }, 5000);
+//     })
+//     .catch(() => {
+//       this.successMessage = 'Failed to send.';
+//     });
+//   }
+// }
