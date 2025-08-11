@@ -51,14 +51,16 @@ onSubmit() {
           this.successMessage = '';
         }, 5000);
       },
-      error: () => {
-        this.errorMessage = 'Failed to send. Please try again.';
+      error: (err) => {
+        console.error('Full error:', err);
+        this.errorMessage = `Failed to send. Status: ${err.status}`;
         this.successMessage = '';
-
+      
         setTimeout(() => {
           this.errorMessage = '';
         }, 5000);
       }
+      
     });
   } else {
     this.successMessage = '';
