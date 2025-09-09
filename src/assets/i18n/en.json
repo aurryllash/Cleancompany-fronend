@@ -1,6 +1,7 @@
 {
   "HOME": "Home",
   "ABOUT": "About Us",
+  "WORK-WITH-US": "Work with us",
   "CONTACT": "Contact",
   "SERVICES": "Services",
   "PRIVATE": "Private",
@@ -147,7 +148,22 @@
   "STEAM_CLEANING_PRICES": "Prices for steam cleaning",
 
   "HOME_VIEWING_TITLE": "Home Viewing Services",
-  "BREADCRUMB_HOME_VIEWING": "Services > Home Viewing"
+  "BREADCRUMB_HOME_VIEWING": "Services > Home Viewing",
+
+
+  "LICENSE": "Do you have a driver’s license (B)?",
+  "DELIVERY": "Have you worked with home delivery before?",
+  "FIRSTNAME": "First name*",
+  "LASTNAME": "Last name*",
+  "EMAIL12": "Email*",
+  "PHONE12": "Phone*",
+  "UPLOAD_CV": "Upload CV",
+  "UPLOAD_OTHER": "Other documents",
+  "MESSAGE12": "Cover letter / message",
+  "SUBMIT12": "Send Application",
+  "SUCCESS12": "Application sent successfully!",
+  "ERROR": "Please fill in all required fields.",
+  "YES": "Yes",
+  "NO": "No"
 
 }
-

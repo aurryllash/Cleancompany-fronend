@@ -14,6 +14,7 @@ import { PrivateComponent } from './private/private.component';
 import { DisinfectionCompaniesComponent } from './disinfection-companies/disinfection-companies.component';
 import { MoveOutCompaniesComponent } from './move-out-companies/move-out-companies.component';
 import { CompaniesConstructionComponent } from './companies-construction/companies-construction.component';
+import { WorkComponent } from './work/work.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -29,6 +30,8 @@ const routes: Routes = [
   {path:'services/companies/disinfection', component:DisinfectionCompaniesComponent},
   {path:'services/companies/move-out-cleaning', component:MoveOutCompaniesComponent},
   {path:'services/companies/prices', component:CompaniesConstructionComponent},
+  {path:'work-with-us', component:WorkComponent},
+
 
 
   {path:'**', component:WildCardComponent},

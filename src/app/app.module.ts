@@ -23,6 +23,7 @@ import { PrivateComponent } from './private/private.component';
 import { MoveOutCompaniesComponent } from './move-out-companies/move-out-companies.component';
 import { DisinfectionCompaniesComponent } from './disinfection-companies/disinfection-companies.component';
 import { CompaniesConstructionComponent } from './companies-construction/companies-construction.component';
+import { WorkComponent } from './work/work.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -47,6 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MoveOutCompaniesComponent,
     DisinfectionCompaniesComponent,
     CompaniesConstructionComponent,
+    WorkComponent,
     
   ],
   imports: [

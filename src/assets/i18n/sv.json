@@ -3,6 +3,7 @@
   "ABOUT": "Om Oss",
   "CONTACT": "Kontakt",
   "SERVICES": "Tjänster",
+  "WORK-WITH-US": "Jobba hos oss",
   "PRIVATE": "Privat",
   "COMPANYS": "Företag",
   "SCHOOLS": "Skolor",
@@ -144,6 +145,21 @@
   "STEAM_CLEANING_PRICES": "Priser för ångtvätt",
 
   "HOME_VIEWING_TITLE": "Visningsstädning",
-  "BREADCRUMB_HOME_VIEWING": "Tjänster > Visningsstädning"
+  "BREADCRUMB_HOME_VIEWING": "Tjänster > Visningsstädning",
+
+  "LICENSE": "Har du B-körkort?",
+  "DELIVERY": "Har du arbetat med hemsändning tidigare?",
+  "FIRSTNAME": "Förnamn*",
+  "LASTNAME": "Efternamn*",
+  "EMAIL12": "E-post*",
+  "PHONE12": "Telefon*",
+  "UPLOAD_CV": "Ladda upp CV",
+  "UPLOAD_OTHER": "Övriga dokument",
+  "MESSAGE12": "Personligt brev / meddelande",
+  "SUBMIT12": "Skicka ansökan",
+  "SUCCESS12": "Ansökan har skickats in!",
+  "ERROR": "Fyll i alla obligatoriska fält.",
+  "YES": "Ja",
+  "NO": "Nej"
 
 }

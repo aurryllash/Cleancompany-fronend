@@ -1,0 +1,94 @@
+main {
+    width: 100%;
+    height: 355px;
+    background-image: url(https://rockstheme.com/rocks/preview-cleanhome/img/background/f1.jpg);
+}
+main .title {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(77, 92, 112, 0.616);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+
+}
+main .title h1 {
+    font-size: 2.5rem;
+}
+main .title p {
+    display: flex;
+    gap: 15px;
+}
+.job-form {
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 100px;
+
+}
+
+.job-form form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.job-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.job-form .form-group div {
+    display: flex;
+    gap: 10px;
+}
+.job-form input,
+.job-form textarea,
+.job-form button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.job-form textarea {
+  min-height: 120px;
+}
+
+.job-form button {
+  grid-column: 1 / -1;
+  background: #1abc9c;
+  color: white;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+}
+
+.job-form button:hover {
+  background: #16a085;
+}
+
+p.success {
+  color: #1abc9c;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+p.error {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .job-form form {
+    grid-template-columns: 1fr;
+  }
+}

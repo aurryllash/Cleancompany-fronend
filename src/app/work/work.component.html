@@ -1,0 +1,67 @@
+<main>
+    <div class="title">
+      <h1>{{ 'WORK-WITH-US' | translate }}</h1>
+    </div>
+  </main>
+  
+  <section class="job-form">
+    <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+  
+      <div class="form-group">
+        <label>{{ 'LICENSE' | translate }}</label>
+        <div>
+          <input type="radio" formControlName="license" value="Yes"> {{ 'YES' | translate }}
+          <input type="radio" formControlName="license" value="No"> {{ 'NO' | translate }}
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>{{ 'DELIVERY' | translate }}</label>
+        <div>
+          <input type="radio" formControlName="delivery" value="Yes"> {{ 'YES' | translate }}
+          <input type="radio" formControlName="delivery" value="No"> {{ 'NO' | translate }}
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>{{ 'FIRSTNAME' | translate }}</label>
+        <input type="text" formControlName="firstname">
+      </div>
+  
+      <div class="form-group">
+        <label>{{ 'LASTNAME' | translate }}</label>
+        <input type="text" formControlName="lastname">
+      </div>
+  
+      <div class="form-group">
+        <label>{{ 'EMAIL12' | translate }}</label>
+        <input type="email" formControlName="email">
+      </div>
+  
+      <div class="form-group">
+        <label>{{ 'PHONE12' | translate }}</label>
+        <input type="tel" formControlName="phone">
+      </div>
+  
+      <div class="form-group">
+        <label>{{ 'UPLOAD_CV' | translate }}</label>
+        <input type="file" (change)="onFileChange($event, 'cv')">
+      </div>
+  
+      <div class="form-group">
+        <label>{{ 'UPLOAD_OTHER' | translate }}</label>
+        <input type="file" (change)="onFileChange($event, 'other')">
+      </div>
+  
+      <div class="form-group">
+        <label>{{ 'MESSAGE12' | translate }}</label>
+        <textarea formControlName="message"></textarea>
+      </div>
+  
+      <button type="submit">{{ 'SUBMIT12' | translate }}</button>
+    </form>
+  
+    <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </section>
+  
